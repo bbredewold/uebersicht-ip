@@ -1,0 +1,6 @@
+{
+    "name": "IP",
+    "description": "Shows the IP addresses of all your interfaces, including your WAN address.",
+    "author": "Bert Bredewold",
+    "email": "bbredewold@gmail.com"
+}
