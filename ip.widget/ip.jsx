@@ -1,14 +1,14 @@
 /**
  * IP Widget for Übersicht
  * 
- * Version: 1.0
- * Last Updated: 01/28/2019
+ * Version: 1.1
+ * Last Updated: 01/29/2019
  * 
  * Created by Bert Bredewold
  */
 
 // Get's WAN IP from a dig to OpenDNS
-export const command = 'Milk/ip.sh';
+export const command = 'ip.widget/ip.sh';
 
 // Refresh every X miliseconds
 export const refreshFrequency = 10000;
@@ -33,7 +33,9 @@ export const render = ({output, error}) => {
         const items = interfaces.map((el) => {
             return (
                 <tr key={el.iface}>
-                    <td>{el.iface}: {el.address}</td>
+                    <td>{el.iface}: <span>{el.address}</span>
+                    <span style={{color: 'rgba(255,255,255,0.8)'}}>{el.cidr ? '/' + el.cidr : ''}</span>
+                    <span style={{color: 'rgba(255,255,255,0.6)'}}>{el.router ? ' -> ' + el.router : ''}</span></td>
                 </tr>
             )
         });
