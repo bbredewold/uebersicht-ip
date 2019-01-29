@@ -1,7 +1,7 @@
 /**
  * IP Widget for Übersicht
  * 
- * Version: 1.1
+ * Version: 1.2
  * Last Updated: 01/29/2019
  * 
  * Created by Bert Bredewold

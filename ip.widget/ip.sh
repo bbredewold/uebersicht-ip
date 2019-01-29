@@ -26,7 +26,7 @@ mask2cidr() {
 
 # Get WAN address
 WAN=$(dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null);
-[[ -z $IP ]] && interfaces+=("{\"iface\":\"WAN\",\"address\":\"$WAN\"}")
+[[ -n $WAN ]] && interfaces+=("{\"iface\":\"WAN\",\"address\":\"$WAN\"}")
 
 # Get Local interfaces
 while read line; do 
