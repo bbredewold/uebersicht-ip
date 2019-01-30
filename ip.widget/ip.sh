@@ -43,7 +43,7 @@ while read line; do
             ip=$(ipconfig getifaddr $iface)
             subnet=$(echo "$packet" | grep subnet_mask | awk -F ": " '{print $2}')
             cidr=$(mask2cidr $subnet)
-            router=$(echo "$packet" | grep server_identifier | awk -F ": " '{print $2}')
+            router=$(echo "$packet" | grep router | awk -F "{|}" '{print $2}')
 
             interfaces+=("{\"iface\":\"$iname\",\"address\":\"$ip\",\"subnet\":\"$subnet\",\"cidr\":\"$cidr\",\"router\":\"$router\"}")
         fi
