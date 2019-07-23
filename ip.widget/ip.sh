@@ -51,4 +51,4 @@ while read line; do
 done <<< "$(networksetup -listnetworkserviceorder | grep 'Hardware Port')"
 
 # Output interfaces in JSON format
-echo "{\"interfaces\":[$(printf '%s\n' $(IFS=,; echo "${interfaces[*]}"))]}"
+echo "{\"interfaces\":[$(printf '%s\n' $(IFS=,; echo "${interfaces[*]}"))]}" | tr '\n' ' '
